@@ -54,7 +54,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		4BD38707212197080088BDF8 /* LYFTestAli.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LYFTestAli.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4BD38707212197080088BDF8 /* faceOffer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = faceOffer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4BD3870A212197080088BDF8 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		4BD3870B212197080088BDF8 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		4BD3870D212197080088BDF8 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
@@ -154,7 +154,7 @@
 		4BD38708212197080088BDF8 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				4BD38707212197080088BDF8 /* LYFTestAli.app */,
+				4BD38707212197080088BDF8 /* faceOffer.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -340,9 +340,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		4BD38706212197080088BDF8 /* LYFTestAli */ = {
+		4BD38706212197080088BDF8 /* faceOffer */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 4BD387332121970A0088BDF8 /* Build configuration list for PBXNativeTarget "LYFTestAli" */;
+			buildConfigurationList = 4BD387332121970A0088BDF8 /* Build configuration list for PBXNativeTarget "faceOffer" */;
 			buildPhases = (
 				4BD38703212197080088BDF8 /* Sources */,
 				4BD38704212197080088BDF8 /* Frameworks */,
@@ -352,9 +352,9 @@
 			);
 			dependencies = (
 			);
-			name = LYFTestAli;
+			name = faceOffer;
 			productName = LYFTestAli;
-			productReference = 4BD38707212197080088BDF8 /* LYFTestAli.app */;
+			productReference = 4BD38707212197080088BDF8 /* faceOffer.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -385,7 +385,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				4BD38706212197080088BDF8 /* LYFTestAli */,
+				4BD38706212197080088BDF8 /* faceOffer */,
 			);
 		};
 /* End PBXProject section */
@@ -632,7 +632,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		4BD387332121970A0088BDF8 /* Build configuration list for PBXNativeTarget "LYFTestAli" */ = {
+		4BD387332121970A0088BDF8 /* Build configuration list for PBXNativeTarget "faceOffer" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				4BD387342121970A0088BDF8 /* Debug */,
