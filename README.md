@@ -164,16 +164,18 @@
 ---
 ## C 编程题
 1. 编写一个程序将输入字符串中的大写字母转化为小写字母，并返回大写字母的个数
+
 2. 编写一个函数，用来在一个给定的整形数组里面找出第2大的数。
+
 3. 用递归方法判断一个数组是否为递增数组（使用递归时充分考虑递归终止条件，以及函数调用思想）
+
 4. 构造学生成绩管理链表，并提供链表操作的函数
- 
- typedef struct student
- {
-         int idnum; //学生的编号，唯一性！！！
-         float score;//学生的成绩
-         struct stuent *next;
-   } STU;
+    
+        typedef struct student{
+            int idnum; //学生的编号，唯一性！！！
+            float score;//学生的成绩
+            struct stuent *next;
+            } STU;
                
       (1)  写一函数ListCreate, 用来建立一个动态链表，初始时只有head节点，head节点不指向有效数据。
             STU *ListCreate (void);
@@ -202,3 +204,4 @@
 5. 用链表模拟一个栈，数组模拟栈的思想就是将入栈的数据以数组方式模拟，现在用链表存储的方式来模拟，要求自己定义栈数据的形式，实现栈常用的操作：
 https://github.com/chancelee/C_Language_Study/blob/master/ruanjiankaifa/ds/LinkStack.c
 
+```
