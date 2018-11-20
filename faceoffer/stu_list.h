@@ -58,6 +58,28 @@ void ListPrint(STU *head );
  */
 void ListSort(STU *head);
 
+/**
+ 链表删除
+
+ @param head 头结点
+ @param id id
+ */
+void del(STU *head, int id);
+
+
+
+
+/**
+  已经按照学号排好序的链表逆序
+  head->num0->num1->num2->num3->num4则逆序后变为
+        head->num4->num3->num2->num1->num0
+  @param head 头结点
+  */
+void reverse(STU *head);
+
+
+
+
 
 void stu_list_test(void);
 

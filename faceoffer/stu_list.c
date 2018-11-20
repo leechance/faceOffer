@@ -109,14 +109,16 @@ STU* getNode(STU*head,int index ){
     STU_LIST p =head;
     int count=1;
     if (index==1) {
-        return p;
+        //返回第一个节点
+        return p->next;
     }else{
         while (p->next!=NULL) {
-            index++;
-            p=p->next;
+          
             if(index==count){
                 return p;
             }
+            index++;
+            p=p->next;
         }
     }
     return p;
@@ -168,6 +170,41 @@ void ListSort(STU *head){
 
     
 }
+//（已经是升序的情况下）逆序
+// 1,2,3,4,5
+void reverse(STU *head){
+       STU_LIST prev = NULL;
+       STU_LIST next = NULL;
+       while (head != NULL) {
+           //在头节点改变之前，先获取下一个节点的指针
+                next = head->next;
+                //头节点的下一个节点要改成它的上一个节点，是一个逆转的过程
+                head->next = prev;
+                //上一个节点前移指向头节点
+                prev = head;
+                //头节点前移指向下一个节点
+                head = next;
+            }
+    
+    
+
+}
+
+void del(STU *head, int id){
+    STU_LIST p=head;
+    int count=0;
+    while (p->next!=NULL) {
+        
+        if (p->idnum==id) {
+            STU*pre_stu=getNode(head, count-1);
+            pre_stu->next=p->next;
+            free(p);
+            break;
+        }
+        count++;
+        p=p->next;
+    }
+}
 
 
 
@@ -195,10 +232,27 @@ void stu_list_test(void){
     new4->idnum=1009;
     new4->score=43;
     ListInsert(head, new4);
-    
     ListPrint(head);
     
+   STU* s1= getNode(head, 1);
+    
+    //排序
     ListSort(head);
+    printf("排序后：\n");
     ListPrint(head);
+    
+    reverse(head);
+    printf("逆序后：\n");
+    ListPrint(head);
+    
+    
+    
+    
+    //删除
+    del(head, 1004);
+    printf("删除后：\n");
+    ListPrint(head);
+
+
     
 }
