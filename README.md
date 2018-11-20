@@ -201,7 +201,23 @@
 
 5. 用链表模拟一个栈，数组模拟栈的思想就是将入栈的数据以数组方式模拟，现在用链表存储的方式来模拟，要求自己定义栈数据的形式，实现栈常用的操作：
 [链接](https://github.com/chancelee/C_Language_Study/blob/master/ruanjiankaifa/ds/LinkStack.c)
-6. 得到一个field在结构体的偏移量（百度笔试）
+6. 得到一个field在结构体的偏移量 C++（百度笔试）
  [链接](https://blog.csdn.net/submorino/article/details/43956695)
+7. 引用和指针的区别 C++（百度笔试)
+   [c++引用与指针的区别](https://www.cnblogs.com/sexybear/p/C_pointer.html)
 
+            
+            ★ 相同点：
+            1. 都是地址的概念；
+            指针指向一块内存，它的内容是所指内存的地址；引用是某块内存的别名。
 
+            ★ 区别：
+            1. 指针是一个实体，而引用仅是个别名；
+            2. 引用使用时无需解引用（*），指针需要解引用；
+            3. 引用只能在定义时被初始化一次，之后不可变；指针可变；
+8. float x 与零值比较的if语句（百度笔试)
+      [详解](https://blog.csdn.net/azhang00000/article/details/5357134)
+      
+        const float EPSINON = 0.00001; 
+        if ((x >= - EPSINON) && (x <= EPSINON) 
+        不可将浮点变量用“==”或“！=”与数字比较，应该设法转化成“>=”或“<=”此类形式。 
