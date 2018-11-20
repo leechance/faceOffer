@@ -102,6 +102,75 @@ void ListPrint(STU *head ){
     }
 }
 
+
+//1004 1006 1001 1009
+//索引从1开始
+STU* getNode(STU*head,int index ){
+    STU_LIST p =head;
+    int count=1;
+    if (index==1) {
+        return p;
+    }else{
+        while (p->next!=NULL) {
+            index++;
+            p=p->next;
+            if(index==count){
+                return p;
+            }
+        }
+    }
+    return p;
+   
+}
+
+//获取链表长度
+int getLength(STU *head){
+    int count=0;
+    STU_LIST p=head;
+    while (p->next!=NULL) {
+        count++;
+        p=p->next;
+    }
+    
+    return count;
+}
+//交换节点数据
+void swap(STU* stu1,STU*stu2){
+    int tempId=stu1->idnum;
+    stu1->idnum=stu2->idnum;
+    stu2->idnum=tempId;
+    
+    int tempScore=stu1->score;
+    stu1->score=stu2->score;
+    stu2->score=tempScore;
+    
+}
+
+//链表的排序的关键是之前的节点
+//1004 1006 1001 1009
+//本质上讲，链表的排序与数组的排序在算法上有很多相通的地方，但是由于单向链表只能向后访问的特殊性，那些要求随机访问的排序算法在链表的排序上并不能施展手脚，所以只能采用相邻比较的排序方法：冒泡法，而且只能从前向后冒泡。链表的另一个问题是由于长度不是已知的，所以终止条件只能通过节点是否为空进行判断，而每次的循环次数也是如此。下面是两种排序方法，一种求出长度再排序，另一种直接进行排序
+//参考链接 https://www.cnblogs.com/torresliang/p/4798099.html
+
+void ListSort(STU *head){
+    
+    int n= getLength(head);
+    if (n > 1) {// 至少两个节点才能排序；
+        for (int i = 0; i < n; i++) {
+            STU *temp = head;
+            for (int j = 0; j < n - i - 1; j++) {// 相邻比较，前者小则互换值。（升序排列）
+                if (temp->idnum>temp->next->idnum) {
+                    swap(temp, temp->next);
+                }
+                temp = temp->next;// 指针右移
+            }
+        }
+    }
+
+    
+}
+
+
+
 void stu_list_test(void){
     //生成头结点
     STU*head=ListCreate();
@@ -127,6 +196,9 @@ void stu_list_test(void){
     new4->score=43;
     ListInsert(head, new4);
     
+    ListPrint(head);
+    
+    ListSort(head);
     ListPrint(head);
     
 }
