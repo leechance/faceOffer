@@ -215,9 +215,17 @@
             1. 指针是一个实体，而引用仅是个别名；
             2. 引用使用时无需解引用（*），指针需要解引用；
             3. 引用只能在定义时被初始化一次，之后不可变；指针可变；
-8. float x 与零值比较的if语句（百度笔试)
+8. float x 与零值比较的if语句 C（百度笔试)
       [详解](https://blog.csdn.net/azhang00000/article/details/5357134)
       
         const float EPSINON = 0.00001; 
         if ((x >= - EPSINON) && (x <= EPSINON) 
         不可将浮点变量用“==”或“！=”与数字比较，应该设法转化成“>=”或“<=”此类形式。 
+9. 如何引用一个已经定义过的全局变量 C（百度笔试）
+    [详解](https://blog.csdn.net/ad35f2/article/details/44134985)
+10. static全局变量与普通变量的区别，局部变量呢？ C（百度笔试）    
+      [详解](https://www.cnblogs.com/felix-kun/p/5404058.html)
+ 11. 队列和栈的区别     （百度笔试） 
+      [详解](https://blog.csdn.net/bbc955625132551/article/details/72773285)
+12. 写一个单链表，要求可以插入数据可删除单个数据（百度笔试） 
+      [详解](https://github.com/chancelee/C_Language_Study/blob/master/ruanjiankaifa/ds/LinkList.c)
