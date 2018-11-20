@@ -22,8 +22,22 @@ STU* ListCreate (void){
 }
 
 //插入节点
+/*
+    int a=100;
+    int *p=NULL;
+    p=&a;
+    为什么P指向NULL还能赋值,但是变量P还是存在栈空间的，P之前什么也不指，现在指向了a的地址
+ 
+   STU_LIST p;
+   如果 p是空，P是能够赋值新值的，但是，p->next会报错，这一点尤其注意，也就是对于空地址的取值，
+   回报空指针的错误
+ 
+ 
+ 
+ */
 STU *ListInsert(STU *head, STU *new){
-  //工作指针,总是找到最后一个节点
+    
+  //工作指针,总是利用头结点找到最后一个节点
    STU_LIST p =head;
     while (p->next!=NULL) {
         p=p->next;
