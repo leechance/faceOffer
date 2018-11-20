@@ -1,4 +1,4 @@
-# 剑指offer
+# 未雨绸缪，潇湘夜雨
 ---
 ## OC 编程题 
 1. 写一个View 从屏幕顶端动画移动到底部
@@ -176,7 +176,7 @@
             float score;//学生的成绩
             struct stuent *next;
             } STU; 
-      
+    [链接](https://github.com/chancelee/faceOffer/blob/master/faceoffer/stu_list.h)
       
 
 5. 用链表模拟一个栈，数组模拟栈的思想就是将入栈的数据以数组方式模拟，现在用链表存储的方式来模拟，要求自己定义栈数据的形式，实现栈常用的操作：
