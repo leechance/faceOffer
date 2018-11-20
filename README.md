@@ -92,6 +92,22 @@
      @end 
 一个通过协议对外提供接口。 
 
+13. [静态方法和实例方法](https://blog.csdn.net/ygh5123687/article/details/72939863)（班德尔）
+        
+        静态方法就是类方法，实例方法就是对象方法
+       
+14.  将字符串以 abcdef|123以 | 分割，输出结果  （班德尔）
+    
+    -(void)separateString{
+        NSString*targetSting=@"abcdefg|123";
+        NSArray*arr=[targetSting componentsSeparatedByString:@"|"];
+        for (NSString*str in arr) {
+        NSLog(@"str=%@",str);
+        }
+    }
+
+15. 100个人依次数123123，数23的退出最后剩哪个？123123 OC实现（班德尔）（未实现）
+
 ---
 ### Foundation 
 
@@ -181,6 +197,55 @@
     [两种方式：自动释放池和runloop](https://blog.csdn.net/jeffasd/article/details/51598086)
     追问如何结束~？
 9. 写一个你所经历的项目架构或cocoa里的MVC设计模式（百度笔试）    
+10. UIButton的继承结构（微享科技）
+    
+        UIButton-->UIControl-->UIView->UIResponder-->NSObject
+11. NSOperation的并发被非并发的区别（微享科技）
+
+     [链接](https://www.jianshu.com/p/813f7d58935d)
+     
+        如果需要自定义并发执行的 Operation，必须重写 start、main、isExecuting、isFinished、isAsynchronous 方法。
+        在 operation 的 main 方法里面，必须提供 autorelease pool,因为你的 operation 完成后需要销毁。
+        一旦你的 operation 开始了，必须通过 KVO，告诉所有的监听者，现在该operation的执行状态。
+        调用时，如果需要并发执行 Operation，必须调用performOperation:方法，当然，也可以改为自定义其他方法或者直接在start方法添加多线程调用。
+        对于自定义的 Operation 类，如果不需要并发执行，可以直接调用start方法.
+        
+12. [Objective-C中的@property和@synthesize用法](https://www.cnblogs.com/AnnieBabygn/p/7742628.html)     （微享科技） 
+   
+        synthesize可以自己定义
+13. NSCoder是做什么的？（微享科技）        
+     [详细](https://www.jianshu.com/p/3a4a495a950a)
+     
+14. CAAnimation对代理是强引用的（微享科技）
+
+        /* The delegate of the animation. This object is retained for the
+        * lifetime of the animation object. Defaults to nil. See below for the
+        * supported delegate methods. */
+        @property(nullable, strong) id <CAAnimationDelegate> delegate;     
+        
+  15. 关于iOS里IBOutlet对象的内存管理(微享科技)
+    
+            当加载nib文件的时候， table会被初始化，这时候它的retain count是1， 然后建立nib文件里对象的连接
+            这时候会调用到你定义的属性的set方法， 因为你定义成了retain， 所以这时候table的retain count变成了2, 属性的getter/setter会用到autorelease，这时候就会变成3！
+  
+            推荐IBoutlet的属性定义成assign（weak）就可以了！
+            
+16. IOS开发之如何自定义UITabBarController（班德尔笔试题）
+      [详解](https://www.cnblogs.com/jerehedu/p/5141270.html)
+      
+17.你用过动画效果吗？请举例说明 ？（班德尔笔试题）
+   [详解](https://blog.csdn.net/aaaaazq/article/details/80736594)
+   
+18.  实现一个cell,有标题和内容 （班德尔笔试题）
+ [详解](https://www.cnblogs.com/soley/p/5418544.html)
+ 
+ 19. 解释一下http，如何下载一张图片代码实现 （班德尔笔试题）
+    [iOS开发—使用GCD下载图片](https://blog.csdn.net/shichunxue/article/details/78495630)
+    [iOS 加载高清大图片](https://www.jianshu.com/p/52e3535dd37c)
+20. 简述对view，viewcontroller, calayer和window的理解（班德尔笔试题）
+      [详解](https://blog.csdn.net/yoyo_lzj/article/details/50682280?utm_source=blogxgwz6)
+    
+    
 ---
 ## C 编程题
 1. 编写一个程序将输入字符串中的大写字母转化为小写字母，并返回大写字母的个数
@@ -229,3 +294,4 @@
       [详解](https://blog.csdn.net/bbc955625132551/article/details/72773285)
 12. 写一个单链表，要求可以插入数据可删除单个数据（百度笔试） 
       [详解](https://github.com/chancelee/C_Language_Study/blob/master/ruanjiankaifa/ds/LinkList.c)
+

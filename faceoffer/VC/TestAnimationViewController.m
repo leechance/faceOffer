@@ -26,6 +26,18 @@
     NSString*destSting=[targetSting stringByReplacingOccurrencesOfString:@"efg" withString:@"gfe"];
     NSLog(@"新字符串：%@",destSting);
 }
+//字符串分割
+-(void)separateString{
+    NSString*targetSting=@"abcdefg|123";
+    NSArray*arr=[targetSting componentsSeparatedByString:@"|"];
+    for (NSString*str in arr) {
+        NSLog(@"str=%@",str);
+    }
+}
+
+//100个人依次数123123，数23的退出最后剩哪个？123123 OC实现
+
+
 
 //写一个取当前日期的方法，输入字符串，格式如下2010-02-19
 //格式化日期，其实就是利用一个日期格式化对象把日期转换成字符串了
@@ -47,6 +59,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     [self replaceString];
+    [self separateString];
     [self testDate];
     
     self.view.backgroundColor=[UIColor colorWithHexString:@"0x12237d"];
