@@ -107,7 +107,7 @@
     { 
         [object test]; 
     } 
-3、有哪些集合类和存放二进制数据类 
+3、有哪些集合类和存放二进制数据类 (百度笔试)
 
     NSArray/NSMutableArray，NSDictionary/NSMutableDictionary，NSSet/NSMutableSet/NSCountedSet,
     NSData存放二进制数据 
@@ -143,7 +143,13 @@
 9、代理和通知的区别 
 
     代理是垂直的，通知可以平行的 
-
+    
+10. OC 快速排序（百度笔试）    
+   [iOS算法笔记-快速排序-OC实现](https://www.jianshu.com/p/34e920acfe1c)
+   [C语言快速排序的实现](https://github.com/chancelee/C_Language_Study/blob/master/ruanjiankaifa/basic/ArrayTest.c)
+   
+   
+   
 
 ### Cocoa
 1、写出iphone编程中常用控件类名（不用很准确，写出五个以上）
@@ -158,9 +164,23 @@
     代理模式 
     通知模式 
     工厂模式
-
-
-
+3. viewController中的didReceiveMemoryWarning 啥时候调用，默认如何处理（百度笔试）
+    [iOS UIViewController 对内存警告的处理经验](https://blog.csdn.net/zuoanlangren/article/details/21996625)
+4. OC 写俩个线程，对同一个变量 分布进行 +/-操作（百度笔试）    
+5. OC中frame与bounds有什么不同(百度笔试）
+    
+        Frame指的是：该view在父view坐标系统中的位置和大小（参照点是父类的坐标系统）
+        Bounds指的是：该view在本身坐标系统中的位置和大小（参照点是本身的坐标系统）
+6. OC中有无多重继承，如何实现多重继承（百度笔试） 
+            
+        没有多重继承。
+        cocoa中所有的类都是NSObject的子类，多继承在这里是用protocl委托代理来实现的，所以我们不用去考虑繁琐的多继承、虚基类的概念，多态特性在oc中拖过委托来实现。
+7. 用OC写两个线程，对同一个变量 分别进行+/-操作（百度笔试）
+     [在iOS中有几种方法来解决多线程访问同一个内存地址的互斥同步问题](https://blog.csdn.net/a_ellisa/article/details/51506233?utm_source=blogxgwz8)
+8. OC中如何创建一个线程，要求可以一直工作，不会只执行一次就结束 （百度笔试）
+    [两种方式：自动释放池和runloop](https://blog.csdn.net/jeffasd/article/details/51598086)
+    追问如何结束~？
+9. 写一个你所经历的项目架构或cocoa里的MVC设计模式（百度笔试）    
 ---
 ## C 编程题
 1. 编写一个程序将输入字符串中的大写字母转化为小写字母，并返回大写字母的个数
@@ -181,5 +201,7 @@
 
 5. 用链表模拟一个栈，数组模拟栈的思想就是将入栈的数据以数组方式模拟，现在用链表存储的方式来模拟，要求自己定义栈数据的形式，实现栈常用的操作：
 [链接](https://github.com/chancelee/C_Language_Study/blob/master/ruanjiankaifa/ds/LinkStack.c)
+6. 得到一个field在结构体的偏移量（百度笔试）
+ [链接](https://blog.csdn.net/submorino/article/details/43956695)
 
 
