@@ -74,6 +74,13 @@ bool judgeIncreaseArray(int a[], int n)
         return a[n-1] >= a[n-2];
     return judgeIncreaseArray( a,n-1) && ( a[n-1] >= a[n-2] );
 }
+bool judgeIncreaseArray2(int a[], int n)
+{
+    if(n==1)
+        return true;
+    return judgeIncreaseArray2(a, n-1)&&(a[n-1]>a[n-2]);
+}
+
 
 int main(int argc, char * argv[]) {
     @autoreleasepool {
