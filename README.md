@@ -42,3 +42,6 @@
        void reverse(STU *head);
        函数说明：head表示链表的头结点
 
+5. 用链表模拟一个栈，数组模拟栈的思想就是将入栈的数据以数组方式模拟，现在用链表存储的方式来模拟，要求自己定义栈数据的形式，实现栈常用的操作：
+https://github.com/chancelee/C_Language_Study/blob/master/ruanjiankaifa/ds/LinkStack.c
+
