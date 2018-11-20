@@ -51,6 +51,8 @@
 		4C2E519721A2714B00FE7620 /* 活动-调查icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C2E518E21A2714A00FE7620 /* 活动-调查icon.png */; };
 		4C2E519821A2714B00FE7620 /* 会议-会议室列表icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C2E518F21A2714A00FE7620 /* 会议-会议室列表icon.png */; };
 		4C2E519B21A2732200FE7620 /* UIColor+Hex.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C2E519A21A2732200FE7620 /* UIColor+Hex.m */; };
+		4C47628321A39918002C3D93 /* C_Program.c in Sources */ = {isa = PBXBuildFile; fileRef = 4C47628221A39918002C3D93 /* C_Program.c */; };
+		4C47628621A39E15002C3D93 /* stu_list.c in Sources */ = {isa = PBXBuildFile; fileRef = 4C47628521A39E15002C3D93 /* stu_list.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -130,6 +132,10 @@
 		4C2E518F21A2714A00FE7620 /* 会议-会议室列表icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "会议-会议室列表icon.png"; sourceTree = "<group>"; };
 		4C2E519921A2732200FE7620 /* UIColor+Hex.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIColor+Hex.h"; sourceTree = "<group>"; };
 		4C2E519A21A2732200FE7620 /* UIColor+Hex.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Hex.m"; sourceTree = "<group>"; };
+		4C47628121A39918002C3D93 /* C_Program.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = C_Program.h; sourceTree = "<group>"; };
+		4C47628221A39918002C3D93 /* C_Program.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = C_Program.c; sourceTree = "<group>"; };
+		4C47628421A39E15002C3D93 /* stu_list.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = stu_list.h; sourceTree = "<group>"; };
+		4C47628521A39E15002C3D93 /* stu_list.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = stu_list.c; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -171,6 +177,10 @@
 				4C2E518121A26DC000FE7620 /* VC */,
 				4BD3870D212197080088BDF8 /* ViewController.h */,
 				4BD3870E212197080088BDF8 /* ViewController.m */,
+				4C47628121A39918002C3D93 /* C_Program.h */,
+				4C47628221A39918002C3D93 /* C_Program.c */,
+				4C47628421A39E15002C3D93 /* stu_list.h */,
+				4C47628521A39E15002C3D93 /* stu_list.c */,
 				4BD38710212197080088BDF8 /* Main.storyboard */,
 				4BD38713212197090088BDF8 /* Assets.xcassets */,
 				4C2E518A21A2714900FE7620 /* 会议-会议申请icon.png */,
@@ -437,9 +447,11 @@
 				4BD3878C2122D0080088BDF8 /* MJRefreshComponent.m in Sources */,
 				4BD3878A2122D0080088BDF8 /* MJRefreshBackFooter.m in Sources */,
 				4BD387452122ABFE0088BDF8 /* LYFTableView.m in Sources */,
+				4C47628621A39E15002C3D93 /* stu_list.c in Sources */,
 				4BD3871A212197090088BDF8 /* main.m in Sources */,
 				4BD38742212288A60088BDF8 /* LYFHeaderView.m in Sources */,
 				4BD3877F2122D0080088BDF8 /* MJRefreshBackGifFooter.m in Sources */,
+				4C47628321A39918002C3D93 /* C_Program.c in Sources */,
 				4BD387912122DB790088BDF8 /* UIView+Frame.m in Sources */,
 				4BD387792122D0080088BDF8 /* UIScrollView+MJRefresh.m in Sources */,
 				4BD3870C212197080088BDF8 /* AppDelegate.m in Sources */,
