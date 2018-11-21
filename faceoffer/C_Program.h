@@ -37,6 +37,19 @@ int secondMax(int a[],int n);
 bool judgeIncreaseArray(int a[], int n);
 bool judgeIncreaseArray2(int a[], int n);
 
+//判断字符串是否回文
+bool judgeIsHuiWen(char*s);
+
+//去掉一个由英文字母组成的字符串的重复字符 gggggoogoooood， 去掉之后变成：god.
+char* removeSameChar(char*src);
+
+//按照个位十位百位依次打印
+void printNumByLocation(int n);
+
+//计算机模拟扑克牌出现对的概率（不包括大小王）（未实现）
+void doubleExist(void);
+
+
 
 
 

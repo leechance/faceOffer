@@ -318,3 +318,48 @@
 
 15 单链表倒转（C）
 
+    STU* reverse(STU *head){
+
+
+        STU*  reversed = NULL;
+        STU*  current = head;
+        STU*  temp = NULL;
+        while(current != NULL){
+            temp = current;
+            current = current->next;
+            temp->next = reversed;
+            reversed = temp;
+        }
+        head = reversed;
+        
+        //重新生成一个Head
+        STU* preHead=malloc(sizeof(STU));
+        preHead->next=head;
+        
+        return preHead;
+
+    }
+
+16. 判断字符串是否回文"abcdcba" (C)
+17. 找出第二大的数，判断各种输入异常 （C）
+            
+            int n;
+            while(1){
+            scanf(“%d”,&n);
+            if(n==1){
+            printf("。。。。。")
+            }
+            if(n>=2){
+                break;
+               }
+           }
+18. 去掉一个由英文字母组成的字符串的重复字符 gggggoogoooood， 去掉之后变成：god.(未实现 C)
+19. 按照个位十位百位依次打印
+
+        while (n>0) {
+            printf("%2d",n%10);
+            n/=10;
+        }
+ 20.计算机模拟扑克牌出现对的概率（不包括大小王）     （未实现）  
+
+21.简单设计一个俄罗斯方块游戏（结构设计）（未实现）

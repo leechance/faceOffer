@@ -191,8 +191,6 @@ STU* reverse(STU *head){
     preHead->next=head;
     
     return preHead;
-    
-    
 
 }
 

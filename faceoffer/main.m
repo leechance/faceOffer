@@ -22,7 +22,10 @@ int main(int argc, char * argv[]) {
     
         stu_list_test();
         
+      bool res=  judgeIsHuiWen("abcba");
+        printNumByLocation(1245);
         
+        doubleExist();
         
        
         return UIApplicationMain(argc, argv, nil, NSStringFromClass([AppDelegate class]));
