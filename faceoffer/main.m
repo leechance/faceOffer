@@ -32,7 +32,10 @@ int main(int argc, char * argv[]) {
       bool res=  judgeIsHuiWen("abcba");
         printNumByLocation(1245);
         
-        doubleExist();
+        //doubleExist();
+        testHong();
+        defineA();
+        
         
        
         return UIApplicationMain(argc, argv, nil, NSStringFromClass([AppDelegate class]));

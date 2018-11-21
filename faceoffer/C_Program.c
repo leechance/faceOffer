@@ -10,6 +10,9 @@
 #include <string.h>
 #include <stdlib.h>
 
+#define MIN(A,B) ((A)>(B)?(B):(A)) //福西软件
+
+
 //1.输入字符串中的大写字母转化为小写字母，并返回大写字母的个数
 int coutBigChar(char*s){
     char*p=s;
@@ -144,4 +147,109 @@ void doubleExist(void){
     float exist= sameCount/(float)totalcount;
     printf("出现对的概率：%f\n",exist);
     
+}
+
+
+void testHong(void){
+   int min= MIN(100, 200);
+    
+    
+    //福西软件
+    int a[3] = {9,10,11};
+    int b = 10;
+    int *p = a;
+    
+    //int ret = MIN(*p++, b); 等同于
+    int ret   =(*p++)>b?b:(*p++);
+    //分析 *p++=9，b=10,所以 int ret= *p++ 此时*p++=10
+    //所以 int ret=10,由于 *p++出现了2次，所以在赋值给ret之后 *p=11
+    
+}
+
+void defineA(void){
+//  a）一个整型数
+    int a=10;
+    //a的数据类型为 int
+    printf("a地址 =%p\n",&a);//0x7ffee8f0cedc
+    printf("a =%d\n",a);
+    
+    
+//  b）一个指向整型数的指针
+    int *b=&a;
+    // b= int * 0x7ffee8f0cedc    0x00007ffee8f0cedc
+    // b的数据类型 int *
+    printf("*b =%d\n",*b);
+
+    
+//  c）一个指向指针的指针，它指向的指针式指向一个整型数
+    int **c=&b;
+    // c = (int **)0x00007ffeedaa4ed0
+    // c数据类型就是 int **
+    //       *c= (int *)0x00007ffeedaa4edc
+    printf("*cc =%d\n",**c);
+    
+//    d）一个有10个整型数的数组
+    int d[10]={1,2,3,4,5,6,7,8,9,0};
+    //d  数据类型是 int [10]
+    // (lldb) p d
+    //(int [10]) $1 = ([0] = 1, [1] = 2, [2] = 3, [3] = 4, [4] = 5, [5] = 6, [6] = 7, [7] = 8, [8] = 9, [9] = 0)
+
+//    e）一个有10个指针的数组，该指针式指向一个整型数的
+    int *e[10];
+    // e的数据类型 是 int *[10]
+    // (lldb) p e
+//    (int *[10]) $0 = {
+//        [0] = 0x0000000000000000
+//        [1] = 0x00000000000130a8
+//        [2] = 0x0000000000000015
+//        [3] = 0x0000000000000000
+//        [4] = 0x02e8042e4032003b
+//        [5] = 0x0000000000000000
+//        [6] = 0x0000003000000010
+//        [7] = 0x00007ffee4fa1f50
+//        [8] = 0x00007ffee4fa1e60
+//        [9] = 0x02e8042e4032003b
+//    }
+//    (lldb) p e[0]
+//    (int *) $1 = 0x0000000000000000
+//    (lldb) p e[1]
+//    (int *) $2 = 0x00000000000130a8
+    
+//    f）一个指向有10个整型数数组的指针
+    int (*f)[10];
+//    (lldb)p f
+//    (int (*)[10]) $0 = 0x00007ffee3969e00;
+//    lldb) p f[1]
+//    (int [10]) $1 = ([0] = 204096240, [1] = 1, [2] = 260690344, [3] = 1, [4] = 0, [5] = 0, [6] = 204145743, [7] = 1, [8] = 0, [9] = 0)
+//    (lldb) p f[1][1]
+//    (int) $2 = 1
+//
+    
+//    g）一个指向函数的指针，该函数有一个整型参数，并返回一个整型数
+    int (*func)(int);
+    
+    //(lldb) p func
+    //(int (*)(int)) $0 = 0x000000010f1b6e04 (faceOffer`ListPrint + 68 at stu_list.c:101)
+    
+    
+//    h）一个有10个指针的数组，该数组里指针指向一个函数，该函数有一个整型参数并返回一个整型数
+    int (*funcg[10])(int);
+    /*
+     (lldb) p funcg
+     (int (*[10])(int)) $2 = {
+     [0] = 0x00007ffee8fb0dd0 (0x00007ffee8fb0dd0)
+     [1] = 0xe6619d4a5a4c0066 (0xe6619d4a5a4c0066)
+     [2] = 0x0000000000000000
+     [3] = 0x0000000000000000
+     [4] = 0x00007ffee8fb0ee0 (0x00007ffee8fb0ee0)
+     [5] = 0x0000000106c5ce04 (faceOffer`ListPrint + 68 at stu_list.c:101)
+     [6] = 0x00007ffee8fb0e00 (0x00007ffee8fb0e00)
+     [7] = 0x000000155a4c0066 (0x000000155a4c0066)
+     [8] = 0x0000000000000000
+     [9] = 0x0000600001038340 (0x0000600001038340)
+     }
+     (lldb) p funcg[0]
+     (int (*)(int)) $3 = 0x00007ffee8fb0dd0 (0x00007ffee8fb0dd0)
+     */
+
 }

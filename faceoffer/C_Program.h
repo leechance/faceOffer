@@ -49,7 +49,10 @@ void printNumByLocation(int n);
 //计算机模拟扑克牌出现对的概率（不包括大小王）（未实现）
 void doubleExist(void);
 
+void testHong(void);
 
+
+void defineA(void);
 
 
 
