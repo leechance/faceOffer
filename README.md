@@ -108,6 +108,25 @@
 
 15. 100个人依次数123123，数23的退出最后剩哪个？123123 OC实现（班德尔）（未实现）
 
+16. What happen when a floating point value is assigned to an integer variable?
+
+        当一个浮点型数据赋值给整型变量时会发生？
+        答案：取整，浮点型缩短
+        说明：基础
+  
+  17.下面输出值（具体看反编译代码）    
+  
+        int x=3;
+        printf("%d",x++ + ++x);//8
+        printf("x=%d",x);     //5
+        
+
+当一个浮点型数据赋值给整型变量时会发生？
+
+答案：取整，浮点型缩短
+
+说明：基础
+
 ---
 ### Foundation 
 
@@ -163,8 +182,59 @@
 10. OC 快速排序（百度笔试）    
    [iOS算法笔记-快速排序-OC实现](https://www.jianshu.com/p/34e920acfe1c)
    [C语言快速排序的实现](https://github.com/chancelee/C_Language_Study/blob/master/ruanjiankaifa/basic/ArrayTest.c)
+11. [OC 的nil,Nil,NSNull,NULLd的区别](https://www.jianshu.com/p/2b44e1c346e7)
    
-   
+        nil：指向oc中对象的空指针
+        Nil：指向oc中类的空指针
+
+          //Nil类对象的书面空值
+            Class someClass = Nil;
+            someClass    Class    0x0    0x0000000000000000
+            
+            (lldb) po someClass
+                nil
+            (lldb) p someClass
+                (Class) $1 = nil
+            
+            int a= someClass; a的值为0
+            
+            What is "Nil" in Objective-C? “Nil”在OC中是什么？
+            答案：(void *)0
+            说明：'NULL','nil'以及'Nil'是指向0地址的空指针。'nil'和'Nil'在OC中被定义为"DARWIN_NULL"，也就是(void *)0
+
+            
+        NULL：指向其他类型的空指针，如一个c类型的内存指针
+        NSNull：在集合对象中，表示空值的对象
+        若obj为nil：
+        ［obj message］将返回NO,而不是NSException
+        若obj为NSNull:
+        ［obj message］将抛出异常NSException
+     
+     12.   说一下下面的地址：
+        s1,s2,s4地址是一样的
+      
+        NSString*s1=@"hello world";
+        NSString*s2=@"hello world";
+        NSString*s3=[NSString stringWithFormat:@"hello world"];
+        NSString*s4=[[NSString alloc]initWithString:@"hello world"];  
+        
+        (lldb) p s1
+        (__NSCFConstantString *) $1 = 0x000000010a6d2bb8 @"hello world"
+        (lldb) p s2
+        (__NSCFConstantString *) $2 = 0x000000010a6d2bb8 @"hello world"
+        (lldb) p s3
+        (__NSCFString *) $3 = 0x0000600001a8a3a0 @"hello world"
+        (lldb) p s4
+        (__NSCFConstantString *) $4 = 0x000000010a6d2bb8 @"hello world"
+
+13. [题目1](https://www.cnblogs.com/blogoflzh/p/4732834.html)
+      [题目2](https://blog.csdn.net/iosevanhuang/article/details/8922352)
+
+14 .Does the Objective-C compiler treats the identifiers of an enumeration as integer constants?
+
+        OC的编译器将枚举型当作整型来处理么？
+        答案：显然是的
+        说明：基础
    
 
 ### Cocoa
@@ -363,3 +433,22 @@
  20.计算机模拟扑克牌出现对的概率（不包括大小王）     （未实现）  
 
 21.简单设计一个俄罗斯方块游戏（结构设计）（未实现）
+
+
+22. 公用体 
+        [详解](https://blog.csdn.net/qq_16628781/article/details/72529228)
+
+        在C语言中，给我们提供了分配和操作一块内存的方式，那就是union关键字。union关键字，定义union下面的成员变量共享一块内存，每一个成员在任一时刻有且只有一个成员使用此块内存。
+        因为C语言只管分配一段空间，至于里面放什么内容，系统都不会管。结构体strcut也是如此。
+        typedef union {
+            short s;
+            char c;
+        }sc;
+        
+        int main(int argc, char * argv[]) {
+            sc u;
+            u.s=0x602;
+            printf("%d",u.c);
+            reurn 0
+        }
+        u.c的值是2

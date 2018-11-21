@@ -11,8 +11,15 @@
 #include "C_Program.h"
 #include "stu_list.h"
 
+typedef union {
+    short s;
+    char c;
+}sc;
 
 int main(int argc, char * argv[]) {
+    sc u;
+    u.s=0x602;
+    printf("%d",u.c);
     
     
     @autoreleasepool {

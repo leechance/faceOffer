@@ -24,7 +24,28 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    //空对象
+    NSNull*null=  [NSNull null];
+    [ViewController class];
     
+    //Nil类对象的书面空值
+    Class someClass = Nil;
+    int a= someClass;
+    
+    Class anotherClass = [NSString class];
+    
+    NSString*s1=@"hello world";
+    NSString*s2=@"hello world";
+    NSString*s3=[NSString stringWithFormat:@"hello world"];
+    NSString*s4=[[NSString alloc]initWithString:@"hello world"];
+
+    
+    int x=3;
+    printf("%d",x++ + ++x);//8
+    printf("x=%d",x);     //5
+
+    
+    //
     self.view.backgroundColor = [UIColor whiteColor];
     
     self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:52.0 / 255.0 green:104.0 / 255.0 blue:206.0 / 255.0 alpha:1];
