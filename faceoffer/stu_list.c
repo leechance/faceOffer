@@ -172,19 +172,25 @@ void ListSort(STU *head){
 }
 //（已经是升序的情况下）逆序
 // 1,2,3,4,5
-void reverse(STU *head){
-       STU_LIST prev = NULL;
-       STU_LIST next = NULL;
-       while (head != NULL) {
-           //在头节点改变之前，先获取下一个节点的指针
-                next = head->next;
-                //头节点的下一个节点要改成它的上一个节点，是一个逆转的过程
-                head->next = prev;
-                //上一个节点前移指向头节点
-                prev = head;
-                //头节点前移指向下一个节点
-                head = next;
-            }
+STU* reverse(STU *head){
+
+
+    STU*  reversed = NULL;
+    STU*  current = head;
+    STU*  temp = NULL;
+    while(current != NULL){
+        temp = current;
+        current = current->next;
+        temp->next = reversed;
+        reversed = temp;
+    }
+    head = reversed;
+    
+    //重新生成一个Head
+    STU* preHead=malloc(sizeof(STU));
+    preHead->next=head;
+    
+    return preHead;
     
     
 
@@ -241,17 +247,16 @@ void stu_list_test(void){
     printf("排序后：\n");
     ListPrint(head);
     
-    reverse(head);
+    
+   STU*newHead= reverse(head);
     printf("逆序后：\n");
-    ListPrint(head);
-    
-    
-    
-    
+    //逆序之后 如果不传入新的head在打印就打不出来
+    ListPrint(newHead);
+
     //删除
     del(head, 1004);
     printf("删除后：\n");
-    ListPrint(head);
+    ListPrint(newHead);
 
 
     

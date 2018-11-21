@@ -294,4 +294,27 @@
       [详解](https://blog.csdn.net/bbc955625132551/article/details/72773285)
 12. 写一个单链表，要求可以插入数据可删除单个数据（百度笔试） 
       [详解](https://github.com/chancelee/C_Language_Study/blob/master/ruanjiankaifa/ds/LinkList.c)
+      
+13. 编写一个标准的strcpy函数
+    [代码](https://github.com/chancelee/C_Language_Study/blob/master/ruanjiankaifa/basic/StringTest.h)
+ 14.描述Vector,List,Map的各自使用情形（C++）
+    
+        map是关联式的，vector、list、deque是序列式的。
+        map：底层机制RB-tree（红黑树），元素自动排序，键值对。
+ 
+        vector：操作方式与array相似，动态空间增长。是连续性空间，支持随机访问。
+            优点：
+            内存动态增长，不需要指定内存大小。
+            支持随机访问，即支持[]和vector.at()。
+            缺点：
+            在内部进行插入删除操作效率低。
+            只能在vector的最后进行push和pop。
+            
+            list：对空间的运用有绝对的精准，一点也不浪费。删除插入简单，但不支持随机访问。双向线性列表。
+                优点：
+                方便插入和删除。
+                可在两端push、pop。
+                    缺点：不能随机访问。
+
+15 单链表倒转（C）
 

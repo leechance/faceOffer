@@ -75,7 +75,7 @@ void del(STU *head, int id);
         head->num4->num3->num2->num1->num0
   @param head 头结点
   */
-void reverse(STU *head);
+ STU *reverse(STU *head);
 
 
 
