@@ -36,6 +36,9 @@ int main(int argc, char * argv[]) {
         testHong();
         defineA();
         
+        set_bit3();
+        clear_bit3();
+        
         
        
         return UIApplicationMain(argc, argv, nil, NSStringFromClass([AppDelegate class]));

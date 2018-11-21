@@ -54,6 +54,9 @@ void testHong(void);
 
 void defineA(void);
 
+void set_bit3(void);
+void clear_bit3(void);
+
 
 
 #endif

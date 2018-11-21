@@ -253,3 +253,23 @@ void defineA(void){
      */
 
 }
+
+//给定一个整型变量a，写两段代码，第一个设置a的bit3，第二个清除a的bit3，以上两个操作中，要保持其它位不变。
+// C语言位运算及其用法（https://blog.csdn.net/wx2306/article/details/79346694）
+#define BIT3 (0x1 << 3)
+static int a=100000;
+void set_bit3(void)
+{
+    a |= BIT3;
+    
+}
+void clear_bit3(void)
+{
+    a &= ~BIT3;
+    
+    
+}
+
+//设置一绝对地址为0x67a9的整型变量的值为0xaa66
+// https://blog.csdn.net/plutus_sutulp/article/details/8628619?utm_source=blogxgwz1
+
