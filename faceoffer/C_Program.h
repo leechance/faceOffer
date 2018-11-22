@@ -57,6 +57,10 @@ void defineA(void);
 void set_bit3(void);
 void clear_bit3(void);
 
+void allocBuf(char*buf,int size);
 
+void testBuf(void);
+//逆序显示函数（输入ABC,修改为CBA）
+void reverseString(char*s);
 
 #endif

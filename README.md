@@ -5,6 +5,37 @@
 2. 写一个内联函数，将字符串@“#ff3344”换成相应的UIColor对象
 3. 将字符串@“abcdefghijklmn”中的efg 截取出来替换成 gfe
 4. 写一个取当前日期的方法，输入字符串，格式如下2010-02-19
+5. 不用存取器的方法，重写TestClass类(福西)
+
+        @interface TestClass :NSObject{
+            NSString *str;
+        }
+        @property(retain)NSString *str;
+        @end
+        
+        @implementation TestClass
+        @synthesize str = _str;
+        @end
+答
+
+    @interface TestClass :NSObject{
+        NSString*str;
+    }
+    -(void)setStr:（NSString *）str;
+    -(NSString *)str;
+    @end
+    @implementation TestClass
+    -(void)setStr:（NSString *）str{
+        if(str!=_str){
+            [_str release];
+            _str = [str retain];
+            }
+        }
+    -(NSString *)str{
+        return[ str autorelease];
+    }
+    @end
+
 
 ## OC 简答题
 
@@ -179,9 +210,9 @@
 
     代理是垂直的，通知可以平行的 
     
-10. OC 快速排序（百度笔试）    
-   [iOS算法笔记-快速排序-OC实现](https://www.jianshu.com/p/34e920acfe1c)
-   [C语言快速排序的实现](https://github.com/chancelee/C_Language_Study/blob/master/ruanjiankaifa/basic/ArrayTest.c)
+10. OC 快速排序（百度笔试), 说说快速排序算法的基本思路或过程（福西）
+  -  [iOS算法笔记-快速排序-OC实现](https://www.jianshu.com/p/34e920acfe1c)
+  -  [C语言快速排序的实现](https://github.com/chancelee/C_Language_Study/blob/master/ruanjiankaifa/basic/ArrayTest.c)
 11. [OC 的nil,Nil,NSNull,NULLd的区别](https://www.jianshu.com/p/2b44e1c346e7)
    
         nil：指向oc中对象的空指针
@@ -499,3 +530,66 @@
             reurn 0
         }
         u.c的值是2
+23. 计算机中的堆和栈分别是什么？关于堆和栈的区别（福西）
+   
+   - [从不同角度解释 堆和栈](http://drivers.160.com/xtwt/221415kAMWN.html）
+        
+    堆和栈的要点：
+        堆，队列优先，先进先出（FIFO—first in first out）。
+        栈，先进后出（FILO—First-In/Last-Out）。
+   
+    一般情况下，如果有人把堆栈合起来说，那它的意思是栈，可不是堆。
+    堆和栈的对比分析：
+    1、堆栈空间分配
+        栈（操作系统）：由操作系统自动分配释放 ，存放函数的参数值，局部变量的值等。其操作方式类似于数据结构中的栈。
+        堆（操作系统）： 一般由程序员分配释放， 若程序员不释放，程序结束时可能由OS回收，分配方式倒是类似于链表
+    2、堆栈缓存方式
+        栈使用的是一级缓存， 他们通常都是被调用时处于存储空间中，调用完毕立即释放。
+        堆则是存放在二级缓存中，生命周期由虚拟机的垃圾回收算法来决定（并不是一旦成为孤儿对象就能被回收）。所以调用这些对象的速度要相对来得低一些。
+    3、堆栈数据结构区别
+        堆（数据结构）：堆可以被看成是一棵树，如：堆排序。
+        栈（数据结构）：一种先进后出的数据结构。
+   
+   24. 设置一绝对地址为0x67a9的整型变量的值为0xaa66
+   - [链接](https://blog.csdn.net/plutus_sutulp/article/details/8628619?utm_source=blogxgwz1)
+   
+   25.    指出这段代码的重大错误，并改正。（高新）
+           - [关于 malloc和memset这对兄弟](https://blog.csdn.net/a351945755/article/details/20142809)
+
+        void allocBuf(char*buf,int size){
+        buf=(char*)malloc(size*sizeof(char));
+        memset(buf, 0, size*sizeof(char));
+        }
+        void testBuf(void){
+        char*buf=NULL;
+        int i,count;
+        allocBuf(buf, 5);
+        for (i=0; i<5; i++)
+        buf[i]=rand()%10;
+        for (i=0; i<4; i++) {
+        printf("%d-%d",i+1,buf[i]+buf[i+1]);
+        }
+        free(buf);
+        }
+        更改如下
+        
+        void allocBuf(char*buf,int size){
+        //字符串不能用malloc申请空间
+        memset(buf, '\0', size*sizeof(char));
+        
+        }
+        void testBuf(void){
+        char buf[5];
+        int i,count;
+        allocBuf(buf, 5);
+        for (i=0; i<4; i++)
+        buf[i]=96+rand()%10;
+        for (i=0; i<5; i++) {
+        printf("%d-%c\n",i+1,buf[i]);
+        }
+        printf("%s\n",buf);
+        }
+26. 字符串逆序显示函数（输入ABC,修改为CBA）
+   
+    void reverseString(char*s);
+  - [字符串逆序](https://blog.csdn.net/m0_37888031/article/details/77896594)

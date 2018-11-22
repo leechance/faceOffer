@@ -270,6 +270,38 @@ void clear_bit3(void)
     
 }
 
-//设置一绝对地址为0x67a9的整型变量的值为0xaa66
-// https://blog.csdn.net/plutus_sutulp/article/details/8628619?utm_source=blogxgwz1
 
+
+//指出代码的重大错误并改正
+void allocBuf(char*buf,int size){
+    //字符串不能用malloc申请空间
+    memset(buf, '\0', size*sizeof(char));
+    
+}
+void testBuf(void){
+    char buf[5];
+    int i,count;
+    allocBuf(buf, 5);
+    for (i=0; i<4; i++)
+        buf[i]=96+rand()%10;
+    for (i=0; i<5; i++) {
+        printf("%d-%c\n",i+1,buf[i]);
+    }
+    printf("%s\n",buf);
+}
+
+#define MAX_LEN 1024
+void reverseString(char*str){
+    int n=strlen(str);
+    int i;
+    char temp;
+    
+    for(i=0;i<(n/2);i++){
+        temp=str[i];
+        str[i]=str[n-i-1];
+        str[n-i-1]=temp;
+        
+    }
+ 
+    
+}

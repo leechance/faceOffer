@@ -38,8 +38,8 @@ int main(int argc, char * argv[]) {
         
         set_bit3();
         clear_bit3();
-        
-        
+        testBuf();
+        reverseString("abcDEF");
        
         return UIApplicationMain(argc, argv, nil, NSStringFromClass([AppDelegate class]));
     }
