@@ -138,6 +138,7 @@
 		4C47628421A39E15002C3D93 /* stu_list.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = stu_list.h; sourceTree = "<group>"; };
 		4C47628521A39E15002C3D93 /* stu_list.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = stu_list.c; sourceTree = "<group>"; };
 		4C47629C21A42403002C3D93 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		4C82726521A698700032851E /* c_cpp_files.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = c_cpp_files.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -171,6 +172,7 @@
 		4BD38709212197080088BDF8 /* faceoffer */ = {
 			isa = PBXGroup;
 			children = (
+				4C82726421A6981A0032851E /* files */,
 				4BD3878E2122DB130088BDF8 /* LYFCategory */,
 				4BD387462122D0080088BDF8 /* MJRefresh */,
 				4BD387922122E2320088BDF8 /* LYFView */,
@@ -348,6 +350,14 @@
 				4C2E518421A26E0E00FE7620 /* TestAnimationViewController.xib */,
 			);
 			path = VC;
+			sourceTree = "<group>";
+		};
+		4C82726421A6981A0032851E /* files */ = {
+			isa = PBXGroup;
+			children = (
+				4C82726521A698700032851E /* c_cpp_files.md */,
+			);
+			path = files;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
