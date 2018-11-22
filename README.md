@@ -478,7 +478,8 @@
 - [bounds改变的影响](https://www.jianshu.com/p/7973f69dc920)
     
 ---
-## [C语言面试题]()
+## [C语言面试题](https://github.com/chancelee/faceOffer/blob/master/faceoffer/files/c_cpp_files.md)
+
 ## 知识面
 1. 说所你了解以及日常使用的版本控制系统，以及它们的优缺点（九州瑞研）
 
