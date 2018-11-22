@@ -139,6 +139,8 @@
 		4C47628521A39E15002C3D93 /* stu_list.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = stu_list.c; sourceTree = "<group>"; };
 		4C47629C21A42403002C3D93 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		4C82726521A698700032851E /* c_cpp_files.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = c_cpp_files.md; sourceTree = "<group>"; };
+		4C82726621A6A1980032851E /* basic.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = basic.md; sourceTree = "<group>"; };
+		4C82726721A6A33D0032851E /* oc.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = oc.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -356,6 +358,8 @@
 			isa = PBXGroup;
 			children = (
 				4C82726521A698700032851E /* c_cpp_files.md */,
+				4C82726621A6A1980032851E /* basic.md */,
+				4C82726721A6A33D0032851E /* oc.md */,
 			);
 			path = files;
 			sourceTree = "<group>";

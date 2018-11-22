@@ -1,4 +1,16 @@
-# 未雨绸缪，潇湘夜雨
+# 潇湘夜雨
+
+
+---
+## [widly-knowledge](https://github.com/chancelee/faceOffer/blob/master/faceoffer/files/basic.md)
+
+---
+## [C interview FAQ](https://github.com/chancelee/faceOffer/blob/master/faceoffer/files/c_cpp_files.md)
+
+---
+## [Objective-C interview](https://github.com/chancelee/faceOffer/blob/master/faceoffer/files/oc.md)
+
+
 ---
 ## OC 编程题 
 1. 写一个View 从屏幕顶端动画移动到底部
@@ -389,13 +401,7 @@
     UILabel,UITextField,UITextView,UIButton,UISwitch, UISegmentedControl,UISlider,UIImageView ,UIScrollView,UITableView,UITabBarController,UINavigationController 
 
 
-2、写出几个常用的设计模式（两个以上） 
-    
-    MVC设计模式 
-    单例模式 
-    代理模式 
-    通知模式 
-    工厂模式
+
 3. viewController中的didReceiveMemoryWarning 啥时候调用，默认如何处理（百度笔试）
     [iOS UIViewController 对内存警告的处理经验](https://blog.csdn.net/zuoanlangren/article/details/21996625)
 4. OC 写俩个线程，对同一个变量 分布进行 +/-操作（百度笔试）    
@@ -477,18 +483,9 @@
         2. bounds，它可以通过改变宽高，改变自身的frame，进而影响到再父视图的显示位置和大小。
 - [bounds改变的影响](https://www.jianshu.com/p/7973f69dc920)
     
----
-## [C语言面试题](https://github.com/chancelee/faceOffer/blob/master/faceoffer/files/c_cpp_files.md)
 
-## 知识面
-1. 说所你了解以及日常使用的版本控制系统，以及它们的优缺点（九州瑞研）
+## Other
 
-        SVN优点：除包括了CVS 的大多数特点外，还有一些如：文件目录可以方便的改名、基于数据库的版本库、操作速度提升、权限管理更完善等功能非常好用。
-        SVN缺点：代码库不是分布式，而是集中在一个地方，所以导致跨国访问的时候速度很慢，远程发开非常不利。其次由于代码库只有一份，特别是元数据都存在服务器上，所以当服务器崩溃的时候损失严重。
-        
-        GIT优点：是免费、开源、它采用了分布式版本库的方式，不必服务器端软件支持，使源代码的发布和交流极其方便。每一个GIT克隆都是一个完整的文件库，含有全部历史记录和修订追踪能力。
-        其最大特色就是“分支”及“合并”操作快速、简便。支持离线工作，GIT是整个项目范围的原子提交，而且GIT中的每个工作树都包含一个具有完整项目历史的仓库。
-        GIT缺点：对windows以及中文的支持不是很好。
 2. 你通常以怎样的数据格式跟服务端做数据交换 （九州瑞研）
 
         JSON、XML,   
@@ -501,23 +498,14 @@
         ASIHTTPRrequest、TXML、TouchJSON、MBProgressHUD、 
             、FMDB、ZBarSDK、MinZIP
  
- 4. 你了解的设计模式 （九州瑞研）
+
         
-        通用设计模式23种
- 
-        OC平台下：
-        Classs Method、Abstract Factory、Singleton、Observer、Prototype、MVC
-        写一个代理  代理， 单例 广播/通知中心
-        MVC对应是几种设计模式的混合
-        
-    5.平时会代码复用，或经常重构自己的代码吗？（九州瑞研）
-    
-        会，为了提高软件质量、性能、软件的扩展性和维护性、使其更加合理、      
+  
    
    ## iOS SDK
     
 1. 如何实现Push 通知的机制（大致写下）
-2 .Key-Value Coding是什么？
+2. Key-Value Coding是什么？
 
         KVC是通过字符串标识符间接访问对象属性和关系的机制。
 3. 说说Auto Release Pool，内存管理模式, GC, retain count     
