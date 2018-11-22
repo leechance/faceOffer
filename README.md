@@ -35,7 +35,68 @@
         return[ str autorelease];
     }
     @end
+    
+6. 怎样实现一个 Memory Cache(九州瑞研)
+        
+        主要是思路：
+- [iOS开发之缓存框架、内存缓存、磁盘缓存等](https://www.2cto.com/kf/201606/517537.html)
+- [TMCache源码分析(一)---TMMemoryCache内存缓存](https://www.jianshu.com/p/a8a45c12d2d2)
+- [TMCache源码分析(二)---TMDiskCache磁盘缓存](https://www.jianshu.com/p/b45b48b1f716)
+7. 如何在有一个属性名和值的情况，给一个对象赋值(九州瑞研)
 
+        对象名.属性名 = 值
+        obj.name = v;
+8. GBK 如何转换为 UTF-8 (3字节)，如何转成Unicode.（2字节）(九州瑞研)
+
+        NSStringEncoding eco=CFStringConvertEncodingToNSStringEncoding(
+        kCFStringEncodingGB_18030_2000);
+        urlStr = [urlStr stringByAddingPercentEscapesUsingEncoding:eco];
+        NSURL * url=[NSURL URLWithString:urlStr];
+ 9. 如何实现一个带删除线的 UILabel（九州瑞研） 
+- [UILabel添加删除线（全部方法详解，看这个就够了）](https://www.jianshu.com/p/d45656256aa9)
+        
+        1）用CG重绘 drawRect
+        2）RTLabel 开源的富文本
+10. 如何让 imageNamed 同时兼容 3.x 及 4.x ,7.x系统，以及不失去缓存,imageNamed自动缓存不会消失       
+
+        按照3.X和4.X,7.X的分辨率做3张图片，
+            test.png    
+            test@2x.png  
+            test@3x.png
+        NSString *path = [[NSBundle mainBundle] pathForResource:@"xxx" ofType:@"png"];
+        UIImage *iv = [[UIImage alloc] initWithContentsOfFile:path];
+
+12. 如何实现一个异步的 UIImageView 开启异步线程下载图片，或用三方库进行一步操作
+        
+        SDWebImageCache
+        
+13. 如何实现像 Settings 一样的界面
+        
+        用TableView、UISwitch  
+14. 如何实现滚动到底部自动加载，以及显示一个 loading cell      (上拉刷新原理) 
+
+        用scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate方法计算是否触底，调用异步刷新事件
+        scrollViewDidScroll
+ 15. 如何实现从外部打开程序
+ 
+    在项目的Info.plist文件中 添加一个 URL types 节点就可以了
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://www.baidu.com"]];
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"tel://18533221222"]];
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"sms://18533221222"]];
+        
+16.  如何将图片添加到照片库  
+        
+         UIImage *img = [UIImage imageWithNamed:@”123.ppng”];
+         UIImageWriteToSavedPhotosAlbum(img, nil, nil, nil);
+            
+17. Undo, Redo 如何实现
+    
+        UIMenuItem
+18.  NSCoding（archive，unarchive）
+            
+            -（id）initWithCoder:(NSCoder *)coder; 
+            -(void) encodeWithCoder:(NSCoder*)coder;
+            
 
 ## OC 简答题
 
@@ -297,8 +358,30 @@
       这个问题，在非ARC 会有问题，对于基本类型，不需要管理内存的，
       使用 NSNumber alloc]init 势必考虑内存释放的问题
       而使用 [NSNumber numberWith]不必考虑内存
-      
+     
+ 19. 解释下面语句的意义。
    
+    [[[MainLoop]initWithName:NONE]run:IMMDIATELY]
+    初始化MainLoop对象，执行 run方法
+    
+  20. OC实现一个顺序表类（高新）
+       - [OC语言实现一个简单的单链表](http://code.cocoachina.com/view/136821)
+       
+             #define Capacity 100
+             typedef DataType int
+             
+             @interface Sequence{
+                NSMutableArray*dataArray;//以可变数组存放节点数据
+                int count;//节点数量
+              }
+              
+              -(Sequence*)initSequenceList();
+              -(void)insertData:(DataType)data;
+              ....
+              @end
+   21. 简述OPENGL ES 渲染流水线（未实现）
+   
+   22. 谈谈如何编程实现一个2D动画系统（未实现）
 
 ### Cocoa
 1、写出iphone编程中常用控件类名（不用很准确，写出五个以上）
@@ -595,3 +678,51 @@
   - [字符串逆序](https://blog.csdn.net/m0_37888031/article/details/77896594)
 27. extern C的作用
 - [extern C的作用详解](https://www.cnblogs.com/carsonzhu/p/5272271.html)
+
+## 知识面
+1. 说所你了解以及日常使用的版本控制系统，以及它们的优缺点（九州瑞研）
+
+        SVN优点：除包括了CVS 的大多数特点外，还有一些如：文件目录可以方便的改名、基于数据库的版本库、操作速度提升、权限管理更完善等功能非常好用。
+        SVN缺点：代码库不是分布式，而是集中在一个地方，所以导致跨国访问的时候速度很慢，远程发开非常不利。其次由于代码库只有一份，特别是元数据都存在服务器上，所以当服务器崩溃的时候损失严重。
+        
+        GIT优点：是免费、开源、它采用了分布式版本库的方式，不必服务器端软件支持，使源代码的发布和交流极其方便。每一个GIT克隆都是一个完整的文件库，含有全部历史记录和修订追踪能力。
+        其最大特色就是“分支”及“合并”操作快速、简便。支持离线工作，GIT是整个项目范围的原子提交，而且GIT中的每个工作树都包含一个具有完整项目历史的仓库。
+        GIT缺点：对windows以及中文的支持不是很好。
+2. 你通常以怎样的数据格式跟服务端做数据交换 （九州瑞研）
+
+        JSON、XML,   
+        Sbjson/touchjson/   开源库
+        Gdata, 
+        主要使用http协议  
+        
+ 3. 你了解的第三方库，常用哪些 Framework      （九州瑞研） 
+ 
+        ASIHTTPRrequest、TXML、TouchJSON、MBProgressHUD、 
+            、FMDB、ZBarSDK、MinZIP
+ 
+ 4. 你了解的设计模式 （九州瑞研）
+        
+        通用设计模式23种
+ 
+        OC平台下：
+        Classs Method、Abstract Factory、Singleton、Observer、Prototype、MVC
+        写一个代理  代理， 单例 广播/通知中心
+        MVC对应是几种设计模式的混合
+        
+    5.平时会代码复用，或经常重构自己的代码吗？（九州瑞研）
+    
+        会，为了提高软件质量、性能、软件的扩展性和维护性、使其更加合理、      
+   
+   ## iOS SDK
+    
+1. 如何实现Push 通知的机制（大致写下）
+2 .Key-Value Coding是什么？
+
+        KVC是通过字符串标识符间接访问对象属性和关系的机制。
+3. 说说Auto Release Pool，内存管理模式, GC, retain count     
+
+        auto release pool内存自动释放池。放到池中的会在失效后自动释放
+        内存管理模式：可以手动申请释放，使用auto release pool，使用ARC
+        GC：Gabbage Collector垃圾回收 
+        iOS 有没有GC Gabage Collector垃圾回收机制 mac os x 有 ios没有
+        retain count：内存计数器

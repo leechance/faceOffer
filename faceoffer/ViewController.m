@@ -45,7 +45,7 @@
     printf("x=%d",x);     //5
 
    NSNumber*num= [[NSNumber alloc]initWithInt:x];
-    
+  
     
     //
     self.view.backgroundColor = [UIColor whiteColor];
