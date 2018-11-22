@@ -346,7 +346,22 @@
     [iOS 加载高清大图片](https://www.jianshu.com/p/52e3535dd37c)
 20. 简述对view，viewcontroller, calayer和window的理解（班德尔笔试题）
       [详解](https://blog.csdn.net/yoyo_lzj/article/details/50682280?utm_source=blogxgwz6)
-    
+      
+21. InitWithNibName：boundle；/dealloc/loadView/viewDidLoad/viewDidUnload 调用顺序，每个方法应该做的工作是什么？（福西）
+
+   *  [macOS 和 iOS 中 Nib 文件实现原理以及最佳实践](https://www.jianshu.com/p/d937da4b27cc)
+   *  [iOS程序执行顺序和UIViewController 的生命周期(整理)](https://www.jianshu.com/p/d60b388b19f5)
+
+22. 说明UiView 类属性 frame/center/bounds的联系与区别，改变bounds的值会不会对frame和center造成改变。（福西）
+- [详解UIView的frame、bounds和center属性](https://www.jianshu.com/p/c16c32c45862)
+
+        Frame指的是：该view在父view坐标系统中的位置和大小（参照点是父类的坐标系统）
+        Bounds指的是：该view在本身坐标系统中的位置和大小（参照点是本身的坐标系统）
+        center：描述当前视图的中心点在其父视图中的位置。
+        改变 bounds
+        1. 它可以修改自己坐标系的原点位置，影响“子view”的显示位置。
+        2. bounds，它可以通过改变宽高，改变自身的frame，进而影响到再父视图的显示位置和大小。
+- [bounds改变的影响](https://www.jianshu.com/p/7973f69dc920)
     
 ---
 ## C 编程题
