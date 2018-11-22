@@ -589,7 +589,9 @@
         }
         printf("%s\n",buf);
         }
-26. 字符串逆序显示函数（输入ABC,修改为CBA）
+26. 字符串逆序显示函数（输入ABC,修改为CBA）(高新)
    
     void reverseString(char*s);
   - [字符串逆序](https://blog.csdn.net/m0_37888031/article/details/77896594)
+27. extern C的作用
+- [extern C的作用详解](https://www.cnblogs.com/carsonzhu/p/5272271.html)
