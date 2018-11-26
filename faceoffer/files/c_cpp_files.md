@@ -179,6 +179,74 @@ Objective-C是基于C的，所以一些公司更看重基础
 27. extern C的作用
 - [extern C的作用详解](https://www.cnblogs.com/carsonzhu/p/5272271.html)
 
+28. 判断是否为空串、空字符串和空值
+    
+        空值是NULL，意思是没有存入内存的数据
+        空字符串 指的是""这个
+        两者字节数不一样
 
+        1）空字符串也就是空串
+        char*s="";
+        printf("s的地址：%p\n",&s);
+        
+        (lldb) p s
+        (char *) $3 = 0x0000000105efab5d ""
+        (lldb) p s[0]
+        (char) $4 = '\0'
+        (lldb) p s[1]
+        (char) $5 = '%'
+        (lldb) p s[2]
+        (char) $6 = '@'
+        (lldb) p s[3]
+        (char) $7 = '%'
+        (lldb) p s[4]
+        (char) $8 = '@'
+        (lldb) p s[5]
+        (char) $9 = '\0'
+        (lldb) p s[6]
+        (char) $10 = 's'
+        (lldb) p s[7]
+        (char) $11 = 't'
+        (lldb) p s[8]
+        (char) $12 = 'a'
+        (lldb) p s[9]
+        (char) $13 = 't'
+        (lldb) 
+        
+        printf("s占用的字节数：%d",sizeof(s));占8个字节
+        为什么s[8]还有值，因为 字符串是静态存储区，所以还有值
+        
+        2)空字符串（空串）
+        char*s1=NULL;
+        printf("s1的地址：%p\n",&s1);
+        printf("s1占用的字节数：%d",sizeof(s1));
+        
+        s1的地址：0x7ffeeb629f98
+        s1占用的字节数：8(lldb) po s[0]
+        <nil>
+        (lldb) po s[1]
+        '%'
+        (lldb) po s[2]
+        '@'
+        (lldb) po s[3]
+        '%'
+        s和s1存储的内容不一样，s第一个元素是’\0‘;s1第一个元素的是空
+        但是作为指针都是占用8个字节
 
+29. 判断是否为空串、空字符串和空值
+- [对于一个频繁使用的短小函数,在C语言中应用什么实现,在C++中应用什么实现?](https://blog.csdn.net/hejianhua/article/details/6716803)
+
+- 在C中，常用预处理语句#define来代替一个函数定义
+- C++ 使用内联函数
+
+30.  #import 跟#include 又什么区别,@class呢, #import<> 跟 #import””又什么区别? 
+
+♠︎ #import 和 #include的区别.
+#import是Objective-C导入头文件的关键字，#include是C/C++导入头文件的关键字,使用#import头文件会自动只导入一次，不会重复导入，相当于#include和#pragma once.
+♠︎ @class的作用.
+@class告诉编译器某个类的声明，当执行时，才去查看类的实现文件，可以解决头文件的相互包含的问题.
+♠︎ #import<>和import””的区别.
+#import<>用来包含系统的头文件，#import””用来包含用户头文件.
+♠︎ import在其他语言和框架也有应用
+比如 Python导入某块,ReactNative导入模块, java 导入Package都用import
 

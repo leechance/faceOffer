@@ -21,6 +21,18 @@ int main(int argc, char * argv[]) {
     u.s=0x602;
     printf("%d",u.c);
     
+    //空字符串
+    char*s="";
+    printf("s的地址：%p\n",&s);
+    printf("s占用的字节数：%d\n",sizeof(s));
+    
+    char*s1=NULL;
+    printf("s1的地址：%p\n",&s1);
+    printf("s1占用的字节数：%d",sizeof(s1));
+    
+    
+    
+    
     
     @autoreleasepool {
         int num=  coutBigChar("123abc def ");
