@@ -78,4 +78,9 @@ void testBuf(void);
 //逆序显示函数（输入ABC,修改为CBA）
 void reverseString(char*s);
 
+//switch比较连个数的大小
+void swtichCompare(int a,int b);
+
+void coinQuestion(void);
+
 #endif

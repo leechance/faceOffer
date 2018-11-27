@@ -30,6 +30,10 @@ int main(int argc, char * argv[]) {
     printf("s1的地址：%p\n",&s1);
     printf("s1占用的字节数：%d",sizeof(s1));
     
+    swtichCompare(10,20);
+    
+    coinQuestion();
+    
     
     
     

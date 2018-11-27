@@ -239,14 +239,15 @@ Objective-C是基于C的，所以一些公司更看重基础
 - 在C中，常用预处理语句#define来代替一个函数定义
 - C++ 使用内联函数
 
-30.  #import 跟#include 又什么区别,@class呢, #import<> 跟 #import””又什么区别? 
+30. switch 比较两个数的大小
 
-♠︎ #import 和 #include的区别.
-#import是Objective-C导入头文件的关键字，#include是C/C++导入头文件的关键字,使用#import头文件会自动只导入一次，不会重复导入，相当于#include和#pragma once.
-♠︎ @class的作用.
-@class告诉编译器某个类的声明，当执行时，才去查看类的实现文件，可以解决头文件的相互包含的问题.
-♠︎ #import<>和import””的区别.
-#import<>用来包含系统的头文件，#import””用来包含用户头文件.
-♠︎ import在其他语言和框架也有应用
-比如 Python导入某块,ReactNative导入模块, java 导入Package都用import
-
+        void swtichCompare(int a,int b){
+        switch(a>b){
+            case true:
+                printf("%d>%d\n",a,b);
+                break;
+            case false:
+                printf("%d<=%d\n",a,b);
+                break;
+            }
+        }

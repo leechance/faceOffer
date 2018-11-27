@@ -305,3 +305,52 @@ void reverseString(char*str){
  
     
 }
+
+void swtichCompare(int a,int b){
+    
+    switch(a>b){
+        case true:
+            printf("%d>%d\n",a,b);
+    break;
+        case false:
+            printf("%d<=%d\n",a,b);
+    break;
+    }
+     
+}
+
+//硬币下正反面概率问题，正面放入箱子，反面从箱子中拿出一个（不为零时），问多少次后箱子里有十个硬币？
+void coinQuestion(void){
+  
+//        int N=0;//总共抛硬币次数
+//        double odd=0;//奇数代表印花面；
+//        double even=0;//偶数代表数字面
+//        printf("请输出抛硬币的次数：");
+//        scanf("%d",&N);
+//        for(int i=0;i<N;i++)
+//        {
+//            if(rand()%2==0){
+//                even++;
+//            }else{
+//                odd++;
+//            }
+//        }
+//        double rate=odd/even;
+//        printf("印花面次数：%f;\n数字面次数：%f;\n概率:%f",odd,even,rate);
+    
+    int odd=0 ;//反面次数
+    int count=0;//正面次数
+    
+    while (odd!=10) {
+        count++;
+        if(rand()%2==0){
+            odd++;
+        }else{
+            odd--;
+        }
+        
+    }
+    
+    printf("\n抛掷了%d次硬币,箱子里有十个硬币\n",count);
+    
+}
