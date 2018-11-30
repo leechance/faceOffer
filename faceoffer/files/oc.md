@@ -419,6 +419,9 @@
         办法2：
         可以通过NSNotificationQueue的enqueueNotification: postingStyle:和enqueueNotification: postingStyle: coalesceMask: forModes: 方法将通告放入队列，实现异步发送，在把通告放入队列之后，这些方法会立即将控制权返回给调用对象
 
+### 26. 写一个工厂模式和单例模式。
+
+
 ♠︎ #import 和 #include的区别.
 #import是Objective-C导入头文件的关键字，#include是C/C++导入头文件的关键字,使用#import头文件会自动只导入一次，不会重复导入，相当于#include和#pragma once.
 ♠︎ @class的作用.
