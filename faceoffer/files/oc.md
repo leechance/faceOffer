@@ -214,7 +214,7 @@
 
         静态方法就是类方法，实例方法就是对象方法
 
-### 14.  将字符串以 abcdef|123以 | 分割，输出结果  （班德尔）
+### 14. 将字符串以 abcdef|123以 | 分割，输出结果  （班德尔）
 
     -(void)separateString{
     NSString*targetSting=@"abcdefg|123";
@@ -232,38 +232,34 @@
         答案：取整，浮点型缩短
         说明：基础
 
-### 17.下面输出值（具体看反编译代码）    
+### 17. 下面输出值（具体看反编译代码）    
 
     int x=3;
     printf("%d",x++ + ++x);//8
     printf("x=%d",x);     //5
 
 
-### 18.当一个浮点型数据赋值给整型变量时会发生？
+### 18. 当一个浮点型数据赋值给整型变量时会发生？
 
-    答案：取整，浮点型缩短
-
-    说明：基础
+    答案：取整，浮点型缩短 。
+    说明：基础 。
    
-### 19.UITableView有时候不太流畅，有什么优化方案   
+### 19. UITableView有时候不太流畅，有什么优化方案   
   
     使用多线程和异步加载数据
-### 20. UIimageView怎么使其有单击，双击事件
-
-    userInteraction = yes
+### 20. UIImageView怎么使其有单击，双击事件 。
+    userInteraction = yes ；
+### 21. 两个多线程怎么通讯，两个非UI线程怎么通讯 ,共享数据 。 
     
-### 21. 两个多线程怎么通讯，两个非UI线程怎么通讯 ,共享数据  
-   
 ### 22. 将一组数据永久保存到手机里，怎样做？
-
-    Nsuserdefaults, plist, db
+    NSUserdefaults, plist, db
     
-### 23. 实现一个横向划动的表格，有什么思路    
-   
-  
-   
-    
+### 23. 实现一个横向划动的表格，有什么思路。    
 
+### 24. NSLog 输出一个浮点类型，四舍五入，并保留一位小数
+        float f=19.96334;
+        NSLog(@"%.1f",f);
+        
 ---
 ### Foundation 
 
@@ -458,7 +454,14 @@
         注: 在@implementation中的成员变量与在@interface中声明的成员变量加上@private变量修饰符仍旧有地方不同: @interface中声明的成员变量加上@private变量修饰符虽然无法被外界访问到，但仍旧能被外界查看到
         
         重点: 在Objective-C没有真正的私有方法,对象可以通过选择器,调用对应的私有方法。原因: 因为OC中调用方法是消息机制，OC方法是动态绑定，只有在运行时才会去查看对象是否有该方法。
-        
+### 28. BOOL 与 bool区别
+
+    Name    Typedef         Header          True Value  False Value
+    BOOL    signed char     objc.h               YES     NO 
+    bool    _Bool           stdbool.h            true    false 
+    Boolean unsigned char   MacTypes.h           TRUE    FALSE
+    Boolean 是枚举类型
+
 ♠︎ #import 和 #include的区别.
 #import是Objective-C导入头文件的关键字，#include是C/C++导入头文件的关键字,使用#import头文件会自动只导入一次，不会重复导入，相当于#include和#pragma once.
 ♠︎ @class的作用.

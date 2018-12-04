@@ -9,6 +9,7 @@
 #include "C_Program.h"
 #include <string.h>
 #include <stdlib.h>
+#include <math.h>
 
 #define MIN(A,B) ((A)>(B)?(B):(A)) //福西软件
 
@@ -296,12 +297,12 @@ void reverseString(char*str){
     int i;
     char temp;
     
-    for(i=0;i<(n/2);i++){
-        temp=str[i];
-        str[i]=str[n-i-1];
-        str[n-i-1]=temp;
-        
-    }
+//    for(i=0;i<(n/2);i++){
+//        temp=str[i];
+//        str[i]=str[n-i-1];
+//        str[n-i-1]=temp;
+//        
+//    }
  
     
 }
@@ -352,5 +353,41 @@ void coinQuestion(void){
     }
     
     printf("\n抛掷了%d次硬币,箱子里有十个硬币\n",count);
+    
+}
+
+//https://www.cnblogs.com/yspworld/p/4143667.html
+//计算一个大数n的阶乘的位数宽度（十进制）（log i累加法 ）
+/*
+ 输入：
+ 
+ 每行输入1个正整数n， （0<n<1000 000）
+ 
+ 输出：
+ 
+ 对于每个n，输出n!的（十进制）位数。
+ 
+ 分析：
+ 
+ 这道题采用蛮力法。根据定义，直接求解！
+ 
+ 所谓n!的十进制位数，就是 log(n)+1, 根据数学公式有：n!=1*2*3*.....*n;
+ 
+ lg(n!)=lg(2)+......lg(n);
+ */
+void dataWidthForBigNum(void){
+    long int n;
+    long int i;
+    double sum;
+    
+    while(scanf("%ld", &n)!=EOF)
+    {
+        sum=0.0;
+        for(i=2; i<=n; i++)
+        {
+            sum+=log10(i);//log2(i)就是二进制的
+        }
+        printf("%ld\n", (int)sum+1 );
+    }
     
 }

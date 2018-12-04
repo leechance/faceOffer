@@ -10,6 +10,7 @@
 #include <stdlib.h>
 #include <time.h>
 
+
 STU* ListCreate (void){
     
     STU_LIST head= malloc(sizeof(STU));

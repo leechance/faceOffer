@@ -17,6 +17,12 @@ typedef union {
 }sc;
 
 int main(int argc, char * argv[]) {
+    int n;
+     scanf("%ld", &n);
+    
+     scanf("%ld", &n);
+    
+     scanf("%ld", &n);
     sc u;
     u.s=0x602;
     printf("%d",u.c);
@@ -33,7 +39,7 @@ int main(int argc, char * argv[]) {
     swtichCompare(10,20);
     
     coinQuestion();
-    
+    dataWidthForBigNum();
     
     
     

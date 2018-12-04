@@ -83,4 +83,7 @@ void swtichCompare(int a,int b);
 
 void coinQuestion(void);
 
+//判断一个数的阶乘在十进制，二进制下的位数
+void dataWidthForBigNum(void);
+
 #endif
