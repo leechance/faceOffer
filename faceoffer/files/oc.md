@@ -115,6 +115,14 @@
     -（id）initWithCoder:(NSCoder *)coder; 
     -(void) encodeWithCoder:(NSCoder*)coder;
 
+19.  Objective-C 求素数
+20.  Objective-C 判断是否回文
+21. 写一个protocal或者delegate
+22. 写一个单例
+23. html加载本地的xml文件，或者js文件
+24. iPhone开发的两种方式是什么，各自的优缺点（代码和xib）
+    
+
 
 ## OC 简答题
 
@@ -231,11 +239,30 @@
     printf("x=%d",x);     //5
 
 
-### 当一个浮点型数据赋值给整型变量时会发生？
+### 18.当一个浮点型数据赋值给整型变量时会发生？
 
     答案：取整，浮点型缩短
 
     说明：基础
+   
+### 19.UITableView有时候不太流畅，有什么优化方案   
+  
+    使用多线程和异步加载数据
+### 20. UIimageView怎么使其有单击，双击事件
+
+    userInteraction = yes
+    
+### 21. 两个多线程怎么通讯，两个非UI线程怎么通讯 ,共享数据  
+   
+### 22. 将一组数据永久保存到手机里，怎样做？
+
+    Nsuserdefaults, plist, db
+    
+### 23. 实现一个横向划动的表格，有什么思路    
+   
+  
+   
+    
 
 ---
 ### Foundation 
@@ -421,7 +448,17 @@
 
 ### 26. 写一个工厂模式和单例模式。
 
+### 27.在objective-c中，说明一下如何让一个函数或类变量成为一个私有的函数和类变量。
+        category @private
+- [Objective-C: 私有成员变量与私有方法](https://blog.csdn.net/u014268482/article/details/80580628)
+    
+        当在.h文件中未声明方法，只在.m文件中实现,此时无法在测试代码中向该对象方法发送调用消息。那么该方法则变成为对象的私有方法。
+        私有方法与私有成员变量都不能被外界访问且显示，只能本类自己访问。
 
+        注: 在@implementation中的成员变量与在@interface中声明的成员变量加上@private变量修饰符仍旧有地方不同: @interface中声明的成员变量加上@private变量修饰符虽然无法被外界访问到，但仍旧能被外界查看到
+        
+        重点: 在Objective-C没有真正的私有方法,对象可以通过选择器,调用对应的私有方法。原因: 因为OC中调用方法是消息机制，OC方法是动态绑定，只有在运行时才会去查看对象是否有该方法。
+        
 ♠︎ #import 和 #include的区别.
 #import是Objective-C导入头文件的关键字，#include是C/C++导入头文件的关键字,使用#import头文件会自动只导入一次，不会重复导入，相当于#include和#pragma once.
 ♠︎ @class的作用.
@@ -531,7 +568,10 @@
         改变 bounds
         1. 它可以修改自己坐标系的原点位置，影响“子view”的显示位置。
         2. bounds，它可以通过改变宽高，改变自身的frame，进而影响到再父视图的显示位置和大小。
+        3. 如果一个固定大小的View 被做成动画来回移动，frame会变化，但是bounds不会变化
 - [bounds改变的影响](https://www.jianshu.com/p/7973f69dc920)
+
+
 
 ### 23. 如何调用UIView的drawRect消息
 #### layoutSubviews在以下情况下会被调用：
@@ -574,6 +614,14 @@
         [super drawTextInRect:actualRect];
     }
 
+
+### 26. Objective-C 若有一个表有1000行,每一行包含一个不同的图像,每一个图像都是从不同的网址URL下载，您将采取什么方法，以保证表内图像滚动尽可能顺利。
+
+    1）图片异步下载，回调到主线程更新UI
+    2）图片是缓存到沙盒目录的，不必每次都会下载
+    3）cell等高的复用Cell,cell不等高的话，将每一行的高度缓存
+        
+### 27. 
 
         
 

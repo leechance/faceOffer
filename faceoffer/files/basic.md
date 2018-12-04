@@ -5,6 +5,9 @@
 ### 软件工程（需求，设计，详细设计，开发，测试，上线，维护）
 ### 设计模式
 ### 网络知识
+1. 介绍一下socket
+
+
 ### 操作系统
 
 ### 汇编和编译
@@ -68,3 +71,8 @@
             }
             printf("\n抛掷了%d次硬币,箱子里有十个硬币\n",count);
         }
+3. 介绍一下树
+
+- [关于树的面试题](https://blog.csdn.net/meihuai7538/article/details/75975270)
+- [二叉树的经典面试题总结](https://blog.csdn.net/snow_5288/article/details/71170904)
+
