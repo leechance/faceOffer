@@ -251,6 +251,64 @@ Objective-C是基于C的，所以一些公司更看重基础
                 break;
             }
         }
+       
+###  31. 判断两个链表是否相交
+- [判断两单链表是否相交？](https://bbs.csdn.net/topics/210047850)
+    
+        两个单链表相交只能是Y型相交，不可能是X型相交
+        因为只能Y型交叉，只要比较最后一个节点是否相等就可以了
+        要得到交点，先遍历一遍，得到长度L1和L2，长的那个链表先移动|L1-L2|步，再逐个比较就行了
+        
+        //检测两条链表是否相交，是则返回第一个交点，否则返回NULL   
+        //思路：把2个链表各遍历一遍，记下长度length1和length2,若2者的尾节点指针相等，则相交。   
+        //       之后再把长的链表从abs(len1-len2)的位置开始遍历，第一个相等的指针为目标节点   
+        node* detect_intersect_links(node *first_link, node *second_link)   
+        {   
+        int legnth1 = 1, length2 = 1, pos = 0;   
+        node *cur = NULL, *longer_link = first_link, *shorter_link = second_link;   
+        if(first_link == NULL || second_link == NULL)   
+        {   
+        return NULL;   
+        }   
+        while(first_link->next || second_link->next)     //遍历2个链表   
+        {   
+        if(first_link->next)   
+        {   
+        first_link = first_link->next;   
+        ++legnth1;   
+        }   
+        if(second_link->next)   
+        {   
+        second_link = second_link->next;   
+        ++length2;   
+        }   
+        }   
+        if(first_link != second_link)                 //比较尾节点   
+        {   
+        return NULL;   
+        }   
+        pos = legnth1 - length2;   
+        if(legnth1 < length2)                  //保证 longer_link为长链表   
+        {   
+        pos = length2 - legnth1;   
+        cur = longer_link;   
+        longer_link = shorter_link;   
+        shorter_link = cur;   
+        }   
+        while(pos-- > 0)   
+        longer_link = longer_link->next;   
+        while(longer_link || shorter_link)   
+        {   
+        if(longer_link == shorter_link)                  //找到第一个交点   
+        {   
+        return longer_link;   
+        }   
+        longer_link = longer_link->next;   
+        shorter_link = shorter_link->next;   
+        }   
+        return NULL;   
+        }  
+        
     
 ## C++ 面试题
 ### 1.[new和malloc区别](https://blog.csdn.net/nie19940803/article/details/76358673)
